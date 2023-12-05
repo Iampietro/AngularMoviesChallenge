@@ -1,0 +1,7 @@
+<div *ngIf="movies$ | async as movies" [className]="'moviesContainer'">
+	<movie-item
+		*ngFor="let movie of movies"
+		[movie]="movie"
+		(movieId)="updateMovies($event)"
+	></movie-item>
+</div>

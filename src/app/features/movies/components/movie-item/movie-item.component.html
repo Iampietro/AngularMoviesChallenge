@@ -1,0 +1,25 @@
+<mat-card class="container">
+	<mat-card-header class="headerWrapper">
+		<mat-card-title>{{ movie.title }}</mat-card-title>
+    <mat-card-subtitle>{{ movie.genres }}</mat-card-subtitle>
+	</mat-card-header>
+	<img mat-card-image src={{movie.imageSrc}} alt={{movie.title}} class="imageStyle">
+	<mat-card-content class="contentWrapper">
+		<p>
+			{{ movie.description }}
+		</p>
+	</mat-card-content>
+	<mat-card-actions class="cardActionsWrapper">
+		<div class="labelWrapper">
+			<span *ngIf="movie.onWatchList" class="label">On my watchlist</span>
+		</div>
+		<button 
+			mat-mini-fab color="accent" 
+			aria-label="add to watchlist" 
+			(click)="updateMovie(movie.id)"
+			class="bookmarkIcon"
+		>
+			<mat-icon>bookmark</mat-icon>
+		</button>
+	</mat-card-actions>
+</mat-card>

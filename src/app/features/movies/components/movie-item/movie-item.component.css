@@ -1,0 +1,33 @@
+.container {
+	width: 300px;
+	background-color: ghostwhite;
+}
+
+.headerWrapper {
+	min-height: 85px;
+}
+
+.imageStyle {
+	width: 330px;
+	height: 490px;
+}
+
+.contentWrapper {
+	min-height: 85px;
+}
+
+.cardActionsWrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.labelWrapper {
+	margin-top: 10px;
+}
+
+.label {
+	margin-top: 5%;
+	background-color: #88e598;
+  padding: 5px;
+  border-radius: 15px;
+}
