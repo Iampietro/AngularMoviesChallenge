@@ -33,6 +33,10 @@ export class MovieStateService {
     return this.movies$;
   }
 
+  getMovieById(movieId: string): Movie {
+    return this.movieSubject.value.filter((movie) => movie.id === movieId)[0];
+  }
+
   public updateMovies(movieId: string) {
     const updatedMovies = this.movieSubject.value.map((movie: Movie) => {
       if (movie.id === movieId) {

@@ -23,8 +23,16 @@ export class MovieFacade {
     return this.movieStateService.getMovies();
   }
 
-  updateMovies(movieId: string) {
+  getMovieById(movieId: string): Movie {
+    return this.movieStateService.getMovieById(movieId)
+  }
+
+  updateMoviesStatus(movieId: string): void {
     this.movieStateService.updateMovies(movieId);
+  }
+
+  updateMovies(movies: Movie[]) {
+    this.movieStateService.setMovies(movies)
   }
 
   //If changes were saved in the backend, data coming from API should have the updated movies

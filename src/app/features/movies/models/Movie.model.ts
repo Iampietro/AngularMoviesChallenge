@@ -10,6 +10,7 @@ export interface MovieFromApi {
 }
 
 export interface Movie {
+  [key: string]: any;
   id: string;
   title: string;
   description: string;

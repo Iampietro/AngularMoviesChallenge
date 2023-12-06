@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { MovieFromApi, Movie } from '../models/Movie.model';
-import  movieConstants  from '../utils/movieConstants';
+import  imageSources  from '../utils/imageSources';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import  movieConstants  from '../utils/movieConstants';
 export class MovieMapper {
 
   getImageSrcFromTitle(title: string): string {
-    return movieConstants.get(title) || '';
+    return imageSources.get(title) || '';
   }
 
   mapMovies(moviesFromApi: MovieFromApi[]) {
