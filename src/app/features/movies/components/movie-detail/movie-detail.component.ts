@@ -27,7 +27,6 @@ export class MovieDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private movieFacade: MovieFacade,
-    
   ) { }
 
   getMovie(): void {

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Movie } from '../../models/Movie.model';
 
@@ -7,7 +7,7 @@ import { Movie } from '../../models/Movie.model';
   templateUrl: './movie-item.component.html',
   styleUrls: ['./movie-item.component.css']
 })
-export class MovieItemComponent implements OnInit {
+export class MovieItemComponent {
 
   @Input()
   movie!: Movie;
@@ -16,10 +16,6 @@ export class MovieItemComponent implements OnInit {
   movieId = new EventEmitter<string>();
 
   constructor() { }
-
-  ngOnInit(): void {
-    //console.log(this.movie)
-  }
 
   updateMovie(value: string) {
     this.movieId.emit(value);
