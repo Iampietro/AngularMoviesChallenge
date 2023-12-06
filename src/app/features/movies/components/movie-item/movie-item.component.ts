@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+
 import { Movie } from '../../models/Movie.model';
 
 @Component({

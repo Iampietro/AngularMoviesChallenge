@@ -6,8 +6,6 @@ import { Movie } from '../models/Movie.model';
 })
 export class MovieLocalStorage {
 
-  constructor() { }
-
   getMovies(): Movie[] {
     const movies = window.localStorage.getItem('movies') || '[]';
     return JSON.parse(movies);
@@ -15,6 +13,15 @@ export class MovieLocalStorage {
 
   setMovies(movies: Movie[]) {
     window.localStorage.setItem('movies', JSON.stringify(movies))
+  }
+
+  getSavedMovie(): Movie {
+    const movie = window.localStorage.getItem('movie') || '[]';
+    return JSON.parse(movie);
+  }
+
+  saveMovie(movie: Movie) {
+    window.localStorage.setItem('movie', JSON.stringify(movie))
   }
 
 }

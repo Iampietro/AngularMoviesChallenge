@@ -1,3 +1,22 @@
-<div>
+<div class="detailsContainer">
 	<img src={{movie.imageSrc}} class="poster">
+	<div class="infoWrapper">
+		<h1>{{ movie.title }}</h1>
+		<div class="watchlistSection">
+			<button 
+			mat-mini-fab color="accent" 
+			aria-label="add to watchlist" 
+			(click)="updateMovie(movie.id)"
+			class="bookmarkIcon"
+			>
+				<mat-icon>bookmark</mat-icon>
+			</button>
+			<span *ngIf="movie.onWatchList" class="label">On my watchlist</span>
+		</div>
+		<span>Rating: {{ movie.rating }}</span>
+		<span>Duration: {{ movie.duration }}</span>
+		<span>Released in : {{ movie.releaseDate }}</span>
+		<p>{{ movie.description }}</p>
+		<iframe width="560" height="315" [src]="movie.trailer | safe" frameborder="0" allowfullscreen></iframe>
+	</div>
 </div>

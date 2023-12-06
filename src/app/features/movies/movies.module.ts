@@ -11,12 +11,14 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './movies.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { SafePipe } from './utils/safe.pipe';
 
 @NgModule({
   declarations: [
     MoviesComponent,
     MovieItemComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,

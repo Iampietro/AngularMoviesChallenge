@@ -32,7 +32,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
   }
 
   updateMovies(movieId: string): void {
-    this.movieFacade.updateMoviesStatus(movieId);
+    this.movieFacade.updateMovieStatus(movieId);
   }
 
   sort(sortOption: string): void {

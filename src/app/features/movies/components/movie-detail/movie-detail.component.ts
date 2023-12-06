@@ -23,14 +23,22 @@ export class MovieDetailComponent implements OnInit {
     onWatchList: false, 
     imageSrc: ''
   };
+
   constructor(
     private route: ActivatedRoute,
-    private movieFacade: MovieFacade
-  ) {}
+    private movieFacade: MovieFacade,
+    
+  ) { }
 
   getMovie(): void {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.movie = this.movieFacade.getMovieById(id);
+  }
+
+  updateMovie(value: string) {
+    this.movie = {...this.movie, onWatchList: !this.movie.onWatchList};
+    this.movieFacade.saveMovie(this.movie);
+    this.movieFacade.updateMovieStatus(value);
   }
 
   ngOnInit(): void {
